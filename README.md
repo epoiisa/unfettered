@@ -1,6 +1,6 @@
 # Unfettered
 
-Unfettered is Epoiisa's reusable Jekyll theme for GitHub Pages, extracted from the [existing Epoiisa site design](https://epoiisa.github.io/). It provides a responsive content column, system light/dark colours, typography, breadcrumbs and optional navigation. Site content and branding stay in each consuming repository.
+Unfettered is Epoiisa's reusable Jekyll theme for GitHub Pages. It provides a responsive content column, system light/dark colours, typography, breadcrumbs and optional navigation. Site content and branding stay in each consuming repository.
 
 ## Use
 
