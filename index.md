@@ -6,7 +6,7 @@ permalink: /
 
 # Unfettered
 
-A lightweight Jekyll theme by Epoiisa, with responsive typography, automatic light and dark colours, and breadcrumbs.
+A lightweight Jekyll theme with responsive typography, automatic light and dark colours, and breadcrumbs.
 
 Explore the [examples]({{ '/examples/' | relative_url }}) for lists, tables, code and a nested page. Resize the window or change your device's appearance to see how the theme adapts.
 
