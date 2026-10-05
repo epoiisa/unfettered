@@ -18,10 +18,10 @@ cd -- "$theme_dir/.preview"
 
 if [[ "$action" == build ]]; then
   exec bundle exec jekyll build --strict_front_matter \
-    --source "$theme_dir" --destination "$theme_dir/.preview/site"
+    --source "$theme_dir" --destination "$theme_dir/.preview/site" --baseurl ""
 fi
 
 printf 'Local preview: http://127.0.0.1:8767/\n'
 exec bundle exec jekyll serve --strict_front_matter \
   --source "$theme_dir" --destination "$theme_dir/.preview/site" \
-  --host 127.0.0.1 --port 8767
+  --host 127.0.0.1 --port 8767 --baseurl ""

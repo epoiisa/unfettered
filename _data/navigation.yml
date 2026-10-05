@@ -1,0 +1,7 @@
+- title: Home
+  url: /
+- title: Examples
+  url: /examples/
+- title: GitHub
+  url: https://github.com/epoiisa/unfettered
+  external: true

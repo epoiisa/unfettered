@@ -1,7 +1,7 @@
 title: Unfettered
 description: A lightweight Jekyll theme by Epoiisa.
-url: ""
-baseurl: ""
+url: "https://epoiisa.github.io"
+baseurl: "/unfettered"
 markdown: kramdown
 kramdown:
   input: GFM

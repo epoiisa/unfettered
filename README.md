@@ -4,6 +4,8 @@ Unfettered is Epoiisa's reusable Jekyll theme for GitHub Pages. It provides a re
 
 ## Use
 
+See the [live demo](https://epoiisa.github.io/unfettered/) for typography, navigation and nested breadcrumbs. The demo builds from this repository's `main` branch and shows the current theme source; consuming sites can still pin a published release.
+
 Add this to your site's `_config.yml`:
 
 ```yaml
@@ -19,5 +21,7 @@ Pin a release tag for a stable version, or use `epoiisa/unfettered@main` to foll
 ## Development and versions
 
 Run `bash preview.command build` to verify the example, or `bash preview.command serve` to preview it locally. Ruby and Bundler are required; dependencies and output remain ignored. After publishing a ref, `bash scripts/verify-remote.command v0.1.0` verifies a separate site that consumes only the public remote theme.
+
+GitHub Pages publishes the demo from `main` at the repository root. Its configuration uses `baseurl: /unfettered`; local previews override this to an empty prefix. Demo pages and navigation stay in this repository and are not imported by remote-theme consumers.
 
 `VERSION` records the current semantic version, `CHANGELOG.md` describes releases, and signed `vX.Y.Z` tags identify published versions. The theme source is at the repository root. Agent instructions are private and ignored.
