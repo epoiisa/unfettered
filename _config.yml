@@ -1,0 +1,28 @@
+title: Unfettered
+description: A lightweight Jekyll theme by Epoiisa.
+url: ""
+baseurl: ""
+markdown: kramdown
+kramdown:
+  input: GFM
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+exclude:
+  - AGENTS.md
+  - AGENTS.*.md
+  - CLAUDE.md
+  - README.md
+  - CHANGELOG.md
+  - VERSION
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - preview.command
+  - scripts
+  - vendor
+  - .preview
+  - .bundle

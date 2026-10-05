@@ -1,0 +1,19 @@
+# Private agent instructions and work files
+AGENTS.md
+AGENTS.*.md
+CLAUDE.md
+.codex/
+.agents/
+.agent/
+_agent/
+
+# Local Jekyll dependencies and generated files
+.bundle/
+vendor/
+.preview/
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+*.gem
+.DS_Store

@@ -1,0 +1,29 @@
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    <li>
+      {% if page.url == '/' %}
+        <span aria-current="page">Home</span>
+      {% else %}
+        <a href="{{ '/' | relative_url }}">Home</a>
+      {% endif %}
+    </li>
+    {% assign segments = page.url | split: '/' %}
+    {% assign breadcrumb_url = '/' %}
+    {% for segment in segments %}
+      {% unless segment == '' %}
+        {% assign breadcrumb_url = breadcrumb_url | append: segment | append: '/' %}
+        {% assign ancestor = site.pages | where: 'url', breadcrumb_url | first %}
+        {% assign breadcrumb_title = ancestor.title | default: segment %}
+        <li>
+          {% if breadcrumb_url == page.url %}
+            <span aria-current="page">{{ page.title | escape }}</span>
+          {% elsif ancestor %}
+            <a href="{{ breadcrumb_url | relative_url }}">{{ breadcrumb_title | escape }}</a>
+          {% else %}
+            <span>{{ breadcrumb_title | escape }}</span>
+          {% endif %}
+        </li>
+      {% endunless %}
+    {% endfor %}
+  </ol>
+</nav>

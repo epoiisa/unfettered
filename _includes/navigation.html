@@ -1,0 +1,17 @@
+{% if site.data.navigation and site.data.navigation.size > 0 %}
+<nav class="site-navigation" aria-label="Main navigation">
+  <ul>
+    {% for item in site.data.navigation %}
+      <li>
+        {% if item.external %}
+          <a href="{{ item.url | escape }}">{{ item.title | escape }}</a>
+        {% elsif page.url == item.url %}
+          <span aria-current="page">{{ item.title | escape }}</span>
+        {% else %}
+          <a href="{{ item.url | relative_url }}">{{ item.title | escape }}</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+{% endif %}

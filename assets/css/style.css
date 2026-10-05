@@ -1,0 +1,262 @@
+:root {
+  color-scheme: light dark;
+  /* Tailwind CSS 4.3 palette: https://tailwindcss.com/docs/colors */
+  --color-blue-500: oklch(62.3% 0.214 259.815);
+  --color-neutral-500: oklch(55.6% 0 0);
+  --color-black: #000;
+  --color-white: #fff;
+
+  --background: var(--color-white);
+  --text: var(--color-black);
+  --muted: var(--color-neutral-500);
+  --link: var(--color-blue-500);
+  --border: oklch(55.6% 0 0 / 30%);
+  --surface: oklch(55.6% 0 0 / 8%);
+
+  /* One body line is the spacing unit; half-lines handle smaller gaps. */
+  --body-leading: 1.5;
+  --rhythm: calc(1rem * var(--body-leading));
+  --half-rhythm: calc(var(--rhythm) / 2);
+  --double-rhythm: calc(var(--rhythm) * 2);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--color-black);
+    --text: var(--color-white);
+    --surface: oklch(55.6% 0 0 / 18%);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: var(--body-leading);
+  overflow-wrap: anywhere;
+}
+
+.site {
+  width: min(100%, 48rem);
+  margin-inline: auto;
+  padding: var(--double-rhythm) clamp(1rem, 4vw, 2rem) calc(var(--rhythm) * 3);
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 0.125rem solid var(--link);
+  outline-offset: 0.25rem;
+}
+
+.site-header {
+  margin-bottom: var(--rhythm);
+  line-height: var(--rhythm);
+}
+
+.site-title {
+  display: inline-block;
+  vertical-align: top;
+  color: var(--text);
+  font-size: 1.25rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.breadcrumbs {
+  margin-bottom: var(--half-rhythm);
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: var(--rhythm);
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumbs li {
+  display: flex;
+}
+
+.breadcrumbs li + li::before {
+  content: " / ";
+  white-space: pre;
+  color: var(--muted);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-block: 0;
+}
+
+h1 {
+  margin-bottom: var(--rhythm);
+  font-size: clamp(1.75rem, 5vw, 2rem);
+  line-height: var(--double-rhythm);
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: calc(var(--rhythm) * 1.5);
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: var(--rhythm);
+}
+
+h4, h5, h6 {
+  font-size: 1rem;
+  line-height: var(--rhythm);
+}
+
+.content {
+  display: flow-root;
+}
+
+.content > * {
+  margin-block: 0;
+}
+
+.content > * + * {
+  margin-top: var(--rhythm);
+}
+
+.content > :is(h2, h3, h4, h5, h6) {
+  margin-top: var(--double-rhythm);
+}
+
+.content > :is(h2, h3, h4, h5, h6) + * {
+  margin-top: var(--half-rhythm);
+}
+
+.content > :first-child {
+  margin-top: 0;
+}
+
+.content :is(ul, ol) {
+  padding-left: var(--rhythm);
+}
+
+.content li + li {
+  margin-top: var(--half-rhythm);
+}
+
+.content :is(li, blockquote, dd, figcaption) > * {
+  margin-block: 0;
+}
+
+.content :is(li, blockquote, dd, figcaption) > * + * {
+  margin-top: var(--half-rhythm);
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+code, pre {
+  background: var(--surface);
+  font-family: ui-monospace, monospace;
+  font-size: 0.9em;
+}
+
+code {
+  padding: 0.15em 0.3em;
+  border-radius: 0.2rem;
+}
+
+pre {
+  margin: 0;
+  padding: var(--half-rhythm);
+  line-height: var(--rhythm);
+  overflow-x: auto;
+}
+
+pre code {
+  padding: 0;
+  font-size: inherit;
+}
+
+blockquote {
+  margin-inline: 0;
+  padding-left: var(--rhythm);
+  border-left: 0.1875rem solid var(--border);
+  color: var(--muted);
+}
+
+table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: var(--half-rhythm);
+  text-align: left;
+  vertical-align: top;
+}
+
+tbody tr:nth-child(odd) {
+  background: var(--surface);
+}
+
+/* Add these classes directly beneath a Markdown table: {: .nowrap-1 .nowrap-2 } */
+table.nowrap-1 tr > :nth-child(1),
+table.nowrap-2 tr > :nth-child(2) {
+  width: 1%;
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+
+hr {
+  border: 0;
+  border-top: 0.0625rem solid var(--border);
+}
+
+.skip-link {
+  position: absolute;
+  top: var(--half-rhythm);
+  left: var(--half-rhythm);
+  padding: var(--half-rhythm);
+  background: var(--background);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.site-navigation {
+  margin-bottom: var(--rhythm);
+}
+
+.site-navigation ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--half-rhythm) var(--rhythm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-navigation [aria-current="page"] {
+  color: var(--text);
+}
