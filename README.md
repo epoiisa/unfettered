@@ -9,6 +9,11 @@ The [live demo](https://epoiisa.github.io/unfettered/) builds from this reposito
 Add this to your site’s `_config.yml`:
 
 ```yaml
+title: "Your site title"
+description: "Your site description"
+url: "https://YOUR-USERNAME.github.io"
+baseurl: "/YOUR-REPOSITORY" # Use "" for a site at the domain root.
+
 remote_theme: epoiisa/unfettered@v0.1.0
 plugins:
   - jekyll-remote-theme
@@ -16,10 +21,8 @@ plugins:
 
 Pin a release tag for a stable version, or use `epoiisa/unfettered@main` to follow development.
 
-Pages use `layout: default` in their front matter. Set your site’s `title`, `description`, `url` and `baseurl`. Optional navigation lives in your site’s `_data/navigation.yml`, with `title` and `url` entries; use `external: true` for external links.
+Pages use `layout: default` in their front matter. Optional navigation lives in your site’s `_data/navigation.yml`, with `title` and `url` entries; use `external: true` for external links.
 
 ## Development
 
-Ruby and Bundler are required.
-
-Run `bash preview.command build` to build the example site, or `bash preview.command serve` to preview it locally.
+Ruby and Bundler are required. Run `bash preview.command build` to build the example site, or `bash preview.command serve` to preview it locally.
