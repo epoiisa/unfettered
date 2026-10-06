@@ -135,15 +135,7 @@ h4, h5, h6 {
 }
 
 .content > * + * {
-  margin-top: var(--rhythm);
-}
-
-.content > :is(h2, h3, h4, h5, h6) {
-  margin-top: var(--double-rhythm);
-}
-
-.content > :is(h2, h3, h4, h5, h6) + * {
-  margin-top: var(--half-rhythm);
+  margin-top: 1rem;
 }
 
 .content > :first-child {
@@ -155,7 +147,7 @@ h4, h5, h6 {
 }
 
 .content li + li {
-  margin-top: var(--half-rhythm);
+  margin-top: 0;
 }
 
 .content :is(li, blockquote, dd, figcaption) > * {
@@ -163,7 +155,7 @@ h4, h5, h6 {
 }
 
 .content :is(li, blockquote, dd, figcaption) > * + * {
-  margin-top: var(--half-rhythm);
+  margin-top: 1rem;
 }
 
 img, video {
@@ -175,29 +167,29 @@ code, pre {
   background: var(--surface);
   font-family: ui-monospace, monospace;
   font-size: 0.9em;
-}
-
-code {
-  padding: 0.15em 0.3em;
+  padding: calc(var(--half-rhythm) / 2) var(--half-rhythm);
   border-radius: 0.2rem;
 }
 
 pre {
   margin: 0;
-  padding: var(--half-rhythm);
   line-height: var(--rhythm);
   overflow-x: auto;
 }
 
 pre code {
+  background: transparent;
   padding: 0;
+  border-radius: 0;
   font-size: inherit;
 }
 
 blockquote {
   margin-inline: 0;
-  padding-left: var(--rhythm);
+  padding: calc(var(--half-rhythm) / 2) var(--half-rhythm);
   border-left: 0.1875rem solid var(--border);
+  border-radius: 0.2rem;
+  background: var(--surface);
   color: var(--muted);
 }
 
@@ -209,7 +201,7 @@ table {
 }
 
 th, td {
-  padding: var(--half-rhythm);
+  padding: calc(var(--half-rhythm) / 2) var(--half-rhythm);
   text-align: left;
   vertical-align: top;
 }

@@ -22,6 +22,20 @@ if [[ "$action" == build ]]; then
 fi
 
 printf 'Local preview: http://127.0.0.1:8767/\n'
-exec bundle exec jekyll serve --strict_front_matter \
+# Wait for Jekyll's initial build before opening the browser.
+(
+  for ((attempt = 0; attempt < 120; attempt++)); do
+    if curl --fail --silent --output /dev/null --max-time 1 http://127.0.0.1:8767/; then
+      open -a Safari http://127.0.0.1:8767/ || printf 'Could not open Safari; use the preview URL above.\n' >&2
+      exit 0
+    fi
+    sleep 0.5
+  done
+  printf 'Preview did not become ready in time; use the preview URL above.\n' >&2
+) &
+browser_wait_pid=$!
+trap 'kill "$browser_wait_pid" 2>/dev/null || true' EXIT
+
+bundle exec jekyll serve --strict_front_matter \
   --source "$theme_dir" --destination "$theme_dir/.preview/site" \
   --host 127.0.0.1 --port 8767 --baseurl ""

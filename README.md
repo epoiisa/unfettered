@@ -25,4 +25,4 @@ Pages use `layout: default` in their front matter. Optional navigation lives in 
 
 ## Development
 
-Ruby and Bundler are required. Run `bash preview.command build` to build the example site, or `bash preview.command serve` to preview it locally.
+Ruby and Bundler are required. Run `bash preview.command build` to build the example site, or run `preview.command` (double-click it in Finder or use `bash preview.command serve`) to preview it locally and automatically open Safari once the site is ready.
