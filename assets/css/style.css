@@ -223,6 +223,10 @@ hr {
   border-top: 0.0625rem solid var(--border);
 }
 
+.content hr {
+  margin-block: var(--rhythm);
+}
+
 .skip-link {
   position: absolute;
   top: var(--half-rhythm);

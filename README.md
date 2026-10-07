@@ -14,7 +14,7 @@ description: "Your site description"
 url: "https://YOUR-USERNAME.github.io"
 baseurl: "/YOUR-REPOSITORY" # Use "" for a site at the domain root.
 
-remote_theme: epoiisa/unfettered@v0.1.0
+remote_theme: epoiisa/unfettered@v0.1.1
 plugins:
   - jekyll-remote-theme
 ```
