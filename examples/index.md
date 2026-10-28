@@ -16,6 +16,26 @@ Use **bold text** for emphasis, *italics* for a change of voice, and `inline cod
 - A longer item that can wrap naturally on smaller screens, with spacing that keeps each item easy to follow.
 - An item with **emphasis** and `code`.
 
+### Nested lists
+
+- [A linked parent item]({{ '/examples/nested/' | relative_url }})
+  - A child item.
+    1. An ordered grandchild.
+    2. Another ordered grandchild.
+  - Another child item.
+- A plain-text parent item.
+  1. An ordered child.
+  2. **An emphasised child.**
+     - An unordered grandchild.
+
+### Lists with paragraphs
+
+- A list item with two paragraphs.
+
+  This second paragraph retains normal paragraph spacing.
+
+- Another list item.
+
 1. Choose a published theme version.
 2. Build your site.
 3. Review the resulting pages.

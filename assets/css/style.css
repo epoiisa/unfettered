@@ -158,6 +158,11 @@ h4, h5, h6 {
   margin-top: 1rem;
 }
 
+/* Nested lists continue their parent item, even when its label is a link. */
+.content li > :is(ul, ol) {
+  margin-top: 0;
+}
+
 img, video {
   max-width: 100%;
   height: auto;
